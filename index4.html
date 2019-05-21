@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html> 
 <head>
 <meta charset="utf-8">
@@ -9,7 +9,7 @@
 <div id='ubicacion'></div>
 <script type="text/javascript">
 if(navigator.geolocation){
-	navigator.geolocation.getCurrentPosition(mostrarUbicacion);
+	navigator.geolocation.getCurrentPosition   (mostrarUbicacion);
 }else{alert("¡Error!Este navegador no soporta la Geolocalizacion.");}
 function refrescarUbicacion(){
 	navigator.geolocation.watchPosition(mostrarUbicacion);}
@@ -35,11 +35,11 @@ function cargarmap(){
 		mapholder.style.width ='750px';
 		var myOptions={
 			center:latlon,zoom :15,
-			mapTypeld:google.maps.MapTypeld.ROADMAP,
+			mapTypeId:google.maps.MapTypeId.ROADMAP,
 			maptypeControl :false,
 			navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
 		};
-		var map=new google.maps.Map(document.getElementByld("mapholder"),myOptions);
+		var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
 		var marker=new google.maps.Marker({position:latlon,map:map,title:"You are here"});
 	}
 	function showError(error)
@@ -61,5 +61,6 @@ function cargarmap(){
 		}
 	}}
 	</script>
+    
 </body>
 </html>
